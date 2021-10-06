@@ -1,0 +1,188 @@
+* {
+  margin: 0px;
+}
+// パクリ
+#splash {
+  /*fixedで全面に固定*/
+position: fixed;
+z-index: 999;
+width: 100%;
+height: 100%;
+background:rgb(0, 0, 0);
+text-align:center;
+color:#fff;
+}
+
+/* Loadingバー中央配置　*/
+#splash_text {
+position: absolute;
+top: 50%;
+left: 50%;
+  z-index: 999;
+width: 100%;
+transform: translate(-50%, -50%);
+color: #fff;
+}
+// id
+#title{
+  padding: 5px;
+  background-color: transparent;
+  height: 50px;
+  display: inline-flex;
+
+}
+#main{
+  margin-top: 70px;
+  padding: 0%;
+}
+// layout
+.fixed{
+  position: fixed;
+}
+.contents-block{
+  display: flex;
+}
+.text-block{
+  margin-left: 10px;
+  padding-top: 4px;
+  font-size: 1.6em;
+  text-align: center;
+  width: 44%;
+
+}
+// body
+  body{
+    color: rgb(255, 255, 255);
+    font-family: 'Rajdhani', sans-serif;
+    background-color: black;
+  }
+// text
+.junpword{
+  text-decoration: none;
+  &:hover{
+    color: rgb(255, 255, 255);
+  }
+  &:visited{
+    color: rgb(255, 255, 255);
+  }
+  &-title{
+    margin: 0px,5px,5px,5px;
+    padding: 0px,5px,5px,5px;
+    font-size: 2em;
+    text-shadow: 0 0 10px #fff,0 0 15px #fff;
+    text-decoration: none;
+    &:hover{
+      color: rgb(255, 255, 255);
+    }
+    &:visited{
+      color: rgb(255, 255, 255);
+    }
+  }
+}
+
+// img
+img.icon{
+  width: 40px;
+  height: 40px;
+  margin-top: 5px;
+  margin-left: 15px;
+  margin-right: 5px;
+}
+img.bgimg{
+  &--1{
+    width: 55vw;
+    height: calc(50vw * 0.666);
+  }
+}
+// animation
+
+.neon {
+  display: inline-block;
+  color: #fff;
+  letter-spacing: .05em;
+  font-size: 2em;
+  text-shadow: 0 1px 30px #ffffff, 0 0 12px #fff, 2px 5px 60px #ffffff;
+}
+.neon > span {
+  -webkit-animation: blink 3s infinite alternate;
+  animation: blink 3s infinite alternate;
+}
+@-webkit-keyframes blink {
+  40% {
+    opacity: .85;
+  }
+  42% {
+    opacity: .4;
+  }
+  43% {
+    opacity: .85;
+  }
+  45% {
+    opacity: .4;
+  }
+  46% {
+    opacity: .85;
+  }
+}
+@keyframes blink {
+  40% {
+    opacity: .85;
+  }
+  42% {
+    opacity: .4;
+  }
+  43% {
+    opacity: .85;
+  }
+  45% {
+    opacity: .4;
+  }
+  46% {
+    opacity: .85;
+  }
+}
+.neon2 {
+  display: inline-block;
+  color: #fff;
+  letter-spacing: .05em;
+  font-size: 2em;
+  text-shadow: 0 1px 30px #ffffff, 0 0 12px #fff, 2px 5px 60px #ffffff;
+}
+.neon2 > span {
+  -webkit-animation: blink 3s infinite alternate;
+  animation: blink 3s infinite alternate;
+}
+@-webkit-keyframes blink {
+  40% {
+    opacity: .85;
+  }
+  42% {
+    opacity: .4;
+  }
+  43% {
+    opacity: .85;
+  }
+  45% {
+    opacity: .4;
+  }
+  46% {
+    opacity: .85;
+  }
+}
+@keyframes blink {
+  40% {
+    opacity: .85;
+  }
+  42% {
+    opacity: .4;
+  }
+  43% {
+    opacity: .85;
+  }
+  45% {
+    opacity: .4;
+  }
+  46% {
+    opacity: .85;
+  }
+}
