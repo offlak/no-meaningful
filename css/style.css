@@ -24,24 +24,64 @@
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   color: #fff;
+  text-shadow: 0 1px 30px #ffffff, 0 0 12px #fff, 2px 5px 60px #ffffff;
+}
+
+.openbtn {
+  /*ボタン内側の基点となるためrelativeを指定。
+追従するナビゲーションの場合はfixed＋top、rightといった位置をセットで指定*/
+  position: fixed;
+  background: red;
+  cursor: pointer;
+  width: 70px;
+  height: 70px;
+  border-radius: 5px;
+  right: 2px;
+}
+
+.openbtn span {
+  display: inline-block;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+  /*アニメーションの設定*/
+  position: absolute;
+  left: 14px;
+  height: 3px;
+  border-radius: 2px;
+  background: #fff;
+  width: 45%;
+}
+
+.openbtn span:nth-of-type(1) {
+  top: 14px;
+}
+
+.openbtn span:nth-of-type(2) {
+  top: 25px;
+}
+
+.openbtn span:nth-of-type(3) {
+  top: 36px;
+}
+
+/*activeクラスが付与されると1・3番目の要素が2番目の要素と同じ位置になり一本線に*/
+.openbtn.active span:nth-of-type(1),
+.openbtn.active span:nth-of-type(3) {
+  top: 23px;
 }
 
 #title {
+  top: 3px;
   padding: 5px;
-  background-color: transparent;
   height: 50px;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 #main {
   margin-top: 70px;
   padding: 0%;
-}
-
-.fixed {
-  position: fixed;
 }
 
 .contents-block {
@@ -56,6 +96,16 @@
   font-size: 1.6em;
   text-align: center;
   width: 44%;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 body {
