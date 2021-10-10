@@ -30,5 +30,13 @@ bar.animate(1.0, function () {//バーを描画する割合を指定します 1.
 });  
 // ハンバーガーメニュー
 $(".openbtn").click(function () {
-	$(this).toggleClass('active');
+		$(this).toggleClass('active');
+		$("#g-nav").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
+		$("#anmseigyo").removeClass('anmon');
+});
+// ナビゲーション
+$("#g-nav a").click(function () {//ナビゲーションのリンクがクリックされたら
+	$(".openbtn").removeClass('active');//ボタンの activeクラスを除去し
+	$("#g-nav").removeClass('panelactive');//ナビゲーションのpanelactiveクラスも除去
+	$("#anmseigyo").toggleClass('anmon');
 });
