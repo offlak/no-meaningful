@@ -30,13 +30,39 @@ bar.animate(1.0, function () {//バーを描画する割合を指定します 1.
 });  
 // ハンバーガーメニュー
 $(".openbtn").click(function () {
-		$(this).toggleClass('active');
-		$("#g-nav").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
-		$("#anmseigyo").removeClass('anmon');
+		if ($('.anmon').length) {
+			$(this).toggleClass('active');
+			$("#g-nav").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
+			$("#anmseigyo").removeClass('anmon');
+		}else{
+			$(".openbtn").removeClass('active');//ボタンの activeクラスを除去し
+			$("#g-nav").removeClass('panelactive');//ナビゲーションのpanelactiveクラスも除去
+			setTimeout(function(){
+				$("#anmseigyo").toggleClass('anmon');
+			},1000);
+		}
 });
 // ナビゲーション
 $("#g-nav a").click(function () {//ナビゲーションのリンクがクリックされたら
 	$(".openbtn").removeClass('active');//ボタンの activeクラスを除去し
 	$("#g-nav").removeClass('panelactive');//ナビゲーションのpanelactiveクラスも除去
 	$("#anmseigyo").toggleClass('anmon');
+});
+// スライドショー
+$('.slider').slick({
+	autoplay: false,//自動的に動き出すか。初期値はfalse。
+	infinite: true,//スライドをループさせるかどうか。初期値はtrue。
+	slidesToShow: 2,//スライドを画面に3枚見せる
+	slidesToScroll: 1,//1回のスクロールで3枚の写真を移動して見せる
+	prevArrow: '<div class="slick-prev"></div>',//矢印部分PreviewのHTMLを変更
+	nextArrow: '<div class="slick-next"></div>',//矢印部分NextのHTMLを変更
+	responsive: [
+		{
+		breakpoint: 769,//モニターの横幅が769px以下の見せ方
+		settings: {
+			slidesToShow: 1,//スライドを画面に2枚見せる
+			slidesToScroll: 1,//1回のスクロールで2枚の写真を移動して見せる
+		}
+	}
+]
 });

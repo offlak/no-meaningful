@@ -13,11 +13,11 @@
 }
 
 #main {
-  margin-top: 70px;
+  margin-top: 0px;
   padding: 0%;
 }
 
-.contents-block {
+.contents-block-1 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -33,12 +33,21 @@
 
 .fixed {
   position: fixed;
+  z-index: 10;
 }
 
 .flex {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.big {
+  font-size: 2em;
 }
 
 body {
@@ -60,18 +69,18 @@ body {
 }
 
 .junpword-title {
-  margin: 0px,5px,5px,5px;
+  margin-top: 7px;
   padding: 0px,5px,5px,5px;
   font-size: 2em;
   text-shadow: 0 0 10px #fff,0 0 15px #fff;
   text-decoration: none;
 }
 
-.junpword-title:hover {
+.junpword:hover {
   color: white;
 }
 
-.junpword-title:visited {
+.junpword:visited {
   color: white;
 }
 
@@ -216,11 +225,11 @@ img.bgimg--1 {
   z-index: 999;
   /*ナビのスタート位置と形状*/
   top: 0;
-  right: -120%;
-  width: 100%;
+  right: -25%;
+  width: 20%;
   height: 100vh;
   /*ナビの高さ*/
-  background: #999;
+  background: rgba(0, 0, 0, 0.75);
   /*動き*/
   -webkit-transition: all 0.6s;
   transition: all 0.6s;
@@ -231,25 +240,13 @@ img.bgimg--1 {
   right: 0;
 }
 
-/*ナビゲーションの縦スクロール*/
-#g-nav.panelactive #g-nav-list {
-  /*ナビの数が増えた場合縦スクロール*/
-  position: fixed;
-  z-index: 999;
-  width: 100%;
-  height: 100vh;
-  /*表示する高さ*/
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
 /*ナビゲーション*/
 #g-nav ul {
   /*ナビゲーション天地中央揃え*/
   position: absolute;
   z-index: 999;
   top: 50%;
-  left: 50%;
+  left: 48%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
@@ -261,7 +258,7 @@ img.bgimg--1 {
 }
 
 #g-nav li a {
-  color: #333;
+  color: white;
   text-decoration: none;
   padding: 10px;
   display: block;
@@ -312,5 +309,89 @@ img.bgimg--1 {
 .openbtn.active span:nth-of-type(1),
 .openbtn.active span:nth-of-type(3) {
   top: 25px;
+}
+
+/*==================================================
+  スライダーのためのcss
+  ===================================*/
+.slider {
+  /*横幅94%で左右に余白を持たせて中央寄せ*/
+  width: 94%;
+  margin: 0 auto;
+  z-index: 5;
+  padding: 0%;
+}
+
+.slider img {
+  width: 100%;
+  /*スライダー内の画像を横幅100%に*/
+  height: auto;
+}
+
+/*slickのJSで書かれるタグ内、スライド左右の余白調整*/
+.slider .slick-slide {
+  margin: 0 10px;
+}
+
+/*矢印の設定*/
+/*戻る、次へ矢印の位置*/
+.slick-prev,
+.slick-next {
+  position: absolute;
+  /*絶対配置にする*/
+  top: 42%;
+  cursor: pointer;
+  /*マウスカーソルを指マークに*/
+  outline: none;
+  /*クリックをしたら出てくる枠線を消す*/
+  border-top: 2px solid white;
+  /*矢印の色*/
+  border-right: 2px solid white;
+  /*矢印の色*/
+  height: 15px;
+  width: 15px;
+}
+
+.slick-prev {
+  /*戻る矢印の位置と形状*/
+  left: -1.5%;
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+}
+
+.slick-next {
+  /*次へ矢印の位置と形状*/
+  right: -1.5%;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+/*ドットナビゲーションの設定*/
+.slick-dots {
+  text-align: center;
+  margin: 20px 0 0 0;
+}
+
+.slick-dots li {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.slick-dots button {
+  color: transparent;
+  outline: none;
+  width: 8px;
+  /*ドットボタンのサイズ*/
+  height: 8px;
+  /*ドットボタンのサイズ*/
+  display: block;
+  border-radius: 50%;
+  background: #252525;
+  /*ドットボタンの色*/
+}
+
+.slick-dots .slick-active button {
+  background: white;
+  /*ドットボタンの現在地表示の色*/
 }
 /*# sourceMappingURL=style.css.map */
