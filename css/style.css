@@ -17,10 +17,20 @@
   padding: 0%;
 }
 
+body {
+  color: white;
+  font-family: 'Rajdhani', sans-serif;
+  background-color: black;
+}
+
 .contents-block-1 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.contents-block-2 {
+  margin-top: 50px;
 }
 
 .text-block {
@@ -48,12 +58,6 @@
 
 .big {
   font-size: 2em;
-}
-
-body {
-  color: white;
-  font-family: 'Rajdhani', sans-serif;
-  background-color: black;
 }
 
 .junpword {
